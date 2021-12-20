@@ -1,7 +1,7 @@
+import Head from 'next/head'
 import React from 'react';
-import './App.css';
 
-function video() {
+const video = () => {
   const [videoURL, setvideoURL] = React.useState("");
   const [address, setAddress] = React.useState("");
   const [loading, setLoading] = React.useState(false);
@@ -101,6 +101,11 @@ function video() {
 
 
   return (
+<>
+
+    
+  
+
     <div className="grid justify-items-center">
     <button onClick={onYouTubeIframeAPIReady} className="text-gray-100 text-xl p-2 rounded-lg hover:bg-blue-900 bg-blue-500">Load Video</button>
     <div className="mt-10" id="player"></div>
@@ -125,8 +130,9 @@ function video() {
       ):null}
       </div>
     ):null}
-    </div>
+      </div></>
   );
 }
+
 
 export default video;
