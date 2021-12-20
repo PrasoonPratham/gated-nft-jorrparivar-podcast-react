@@ -1,7 +1,23 @@
+import { ThirdwebProvider } from '@3rdweb/react';
 import '../styles/globals.css'
+import 'regenerator-runtime/runtime';
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+const supportedChainIds = [1, 4, 137];
+const connectors = {
+    injected: {}
+};
 
-export default MyApp
+const MyApp = ({ Component, pageProps }) => {
+    return (
+        <>
+            <ThirdwebProvider
+                connectors={connectors}
+                supportedChainIds={supportedChainIds}
+            >
+                <Component {...pageProps} />
+            </ThirdwebProvider>
+        </>
+    );
+};
+
+export default MyApp;

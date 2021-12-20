@@ -103,9 +103,9 @@ const video = () => {
   return (
 <>
 
-    
-  
-
+    <Head>
+      <script type="text/javascript" id="hs-script-loader" src="https://www.youtube.com/iframe_api" />
+    </Head>
     <div className="grid justify-items-center">
     <button onClick={onYouTubeIframeAPIReady} className="text-gray-100 text-xl p-2 rounded-lg hover:bg-blue-900 bg-blue-500">Load Video</button>
     <div className="mt-10" id="player"></div>
